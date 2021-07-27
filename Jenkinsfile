@@ -10,19 +10,19 @@ pipeline {
     
     stage('build'){
       steps{
-	mvn compile
+	sh 'mvn compile'
       }
     }
 
     stage('test'){
       steps{
-	mvn clean test
+	sh 'mvn clean test'
       }
     }
 
     stage('package'){
       steps{
-	mvn package -DskipTests
+	sh 'mvn package -DskipTests'
       }
     }
   }
