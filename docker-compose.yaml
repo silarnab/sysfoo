@@ -2,6 +2,6 @@ version: "3.8"
 
 services:
   sysfoo:
-    image: xxxxxx/sysfoo:latest
+    image: silarnab/sysfoo:latest
     ports:
       - 8888:8080
