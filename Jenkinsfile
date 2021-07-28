@@ -40,9 +40,9 @@ pipeline {
     }
 
     stage('Docker BnP') {
+      when { branch 'master' }
       agent any
       steps {
-        when { branch 'master' }
         script {
           docker.withRegistry('https://index.docker.io/v1/', 'docker_login') {
             def dockerImage = docker.build("silarnab/sysfoo:v${env.BUILD_ID}", "./")
